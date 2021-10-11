@@ -188,7 +188,6 @@ async def update_book_app(request: Request, isbn13: str):
     await api_key_check(request)
 
     data = await request.json()
-    print(f"{data=}")
     try:
         update_book(data, isbn13)
     except:
