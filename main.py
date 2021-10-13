@@ -115,8 +115,9 @@ api_key = 'hK0iP5dL7bW3fP3y'
 if __name__ == '__main__':
     # test
     c = conn.cursor()
-    c.execute("DELETE FROM books")
+    c.execute("DROP TABLE IF EXISTS books;")
     create_table_books()
+    c.execute("DELETE FROM books;")
 
     test_isbn13 = 12321321
     test_book = ("hey", test_isbn13, "details1", "publisher2", 2021, 15.00)
